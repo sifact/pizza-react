@@ -108,7 +108,7 @@ const Cart = () => {
 
                                 <span>$ {getSum(item._id, item.price)}</span>
                                 <button
-                                    className="bg-red-500 px-4 py-2 rounded-full leading-none text-white"
+                                    className=" bg-red-500 px-4 py-2 rounded-full leading-none text-white"
                                     onClick={() => handleDelete(item._id)}
                                 >
                                     Delete

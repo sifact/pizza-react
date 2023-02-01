@@ -34,7 +34,7 @@ const Navbar = () => {
                         <Link to="/cart">
                             <div style={cartStyle}>
                                 <span className="text-white">
-                                    {cart.totalItems ? cart.totalItems : 0}
+                                    {cart?.totalItems ? cart.totalItems : 0}
                                 </span>
                                 <img
                                     className="ml-2"
