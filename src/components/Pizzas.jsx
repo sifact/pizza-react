@@ -5,7 +5,7 @@ const Pizzas = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/products`;
+        const url = `https://pizza-react-server.vercel.app/products`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setData(data));

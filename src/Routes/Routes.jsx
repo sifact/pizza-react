@@ -32,7 +32,9 @@ const router = createBrowserRouter([
                 path: "/productDetails/:id",
                 element: <ProductsDetails />,
                 loader: ({ params }) =>
-                    fetch(`http://localhost:5000/productDetails/${params.id}`),
+                    fetch(
+                        `https://pizza-react-server.vercel.app/productDetails/${params.id}`
+                    ),
             },
         ],
     },

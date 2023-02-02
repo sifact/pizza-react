@@ -11,7 +11,7 @@ const Cart = () => {
     const [priceFetched, togglePriceFetched] = useState(false);
 
     useEffect(() => {
-        if (!cart.items) {
+        if (!cart?.items) {
             return;
         }
 
@@ -20,7 +20,8 @@ const Cart = () => {
         }
 
         const url =
-            `http://localhost:5000/cartItems?ids=` + Object.keys(cart.items);
+            `https://pizza-react-server.vercel.app/cartItems?ids=` +
+            Object.keys(cart.items);
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
