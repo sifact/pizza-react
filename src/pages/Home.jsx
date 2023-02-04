@@ -7,9 +7,9 @@ const Home = () => {
     return (
         <>
             <div className="hero py-16">
-                <div className="container flex items-center mx-auto">
-                    <div className="w-1/2">
-                        <h6 className="text-lg ">
+                <div className="container flex items-center mx-auto xsm:flex-col sm:flex-row ">
+                    <div className="w-1/2 xsm:pb-12">
+                        <h6 className="text-lg text-primary">
                             {" "}
                             <em>Are you hungry</em>{" "}
                         </h6>

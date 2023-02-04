@@ -2,16 +2,19 @@ import React, { useContext, useEffect, useState } from "react";
 import img from "../assets/img/pizza.png";
 import { cartContext } from "../Contexts/CartProvider";
 import emptyCart from "../assets/img/empty-cart.png";
+import Checkout from "../components/Checkout";
 
 const Cart = () => {
     let total = 0;
     const [cartItems, setCartItems] = useState([]);
     const { cart, setCart } = useContext(cartContext);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [priceFetched, togglePriceFetched] = useState(false);
 
     useEffect(() => {
         if (!cart?.items) {
+            setIsLoading(false);
             return;
         }
 
@@ -26,6 +29,7 @@ const Cart = () => {
             .then((res) => res.json())
             .then((data) => {
                 setCartItems(data);
+                setIsLoading(false);
                 togglePriceFetched(true);
             });
     }, [cart]);
@@ -70,50 +74,53 @@ const Cart = () => {
         setCartItems(updatedProductList);
     };
 
-    const handleOrder = () => {
-        window.alert("Order placed successfully!");
-        setCartItems([]);
-        setCart([]);
-    };
-    return cartItems.length ? (
+    return isLoading ? (
+        <div className="w-screen h-screen z-50 flex justify-center items-center">
+            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-yellow-300"></div>
+        </div>
+    ) : cartItems.length ? (
         <div className="container mx-auto lg:w-1/2 w-full pb-24">
             <h1 className="my-12 font-bold">Cart Items</h1>
             <ul>
                 {cartItems?.map((item) => {
                     return (
                         <li className="mb-4" key={item.id}>
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center">
+                            <div className="flex items-center xxsm:flex-col sm:flex-row">
+                                <div className="flex items-center mr-12">
                                     <img src={img} alt="" className="h-16" />
                                     <span className="font-bold ml-4 w-48">
                                         {item.name}
                                     </span>
                                 </div>
-                                <div>
+                                <div className="flex justify-between xxsm:mt-8 xxsm:mb-12 sm:my-0 w-full">
+                                    <div>
+                                        <button
+                                            className="bg-yellow-500 px-4 py-2 rounded-full leading-none"
+                                            onClick={() => decrement(item._id)}
+                                        >
+                                            -
+                                        </button>
+                                        <b className="mx-4">
+                                            {getQuantity(item._id)}
+                                        </b>
+                                        <button
+                                            className="bg-yellow-500 px-4 py-2 rounded-full leading-none"
+                                            onClick={() => increment(item._id)}
+                                        >
+                                            +
+                                        </button>
+                                    </div>
+
+                                    <span>
+                                        $ {getSum(item._id, item.price)}
+                                    </span>
                                     <button
-                                        className="bg-yellow-500 px-4 py-2 rounded-full leading-none"
-                                        onClick={() => decrement(item._id)}
+                                        className=" bg-red-500 px-4 py-2 rounded-full leading-none text-white"
+                                        onClick={() => handleDelete(item._id)}
                                     >
-                                        -
-                                    </button>
-                                    <b className="mx-4">
-                                        {getQuantity(item._id)}
-                                    </b>
-                                    <button
-                                        className="bg-yellow-500 px-4 py-2 rounded-full leading-none"
-                                        onClick={() => increment(item._id)}
-                                    >
-                                        +
+                                        Delete
                                     </button>
                                 </div>
-
-                                <span>$ {getSum(item._id, item.price)}</span>
-                                <button
-                                    className=" bg-red-500 px-4 py-2 rounded-full leading-none text-white"
-                                    onClick={() => handleDelete(item._id)}
-                                >
-                                    Delete
-                                </button>
                             </div>
                         </li>
                     );
@@ -123,14 +130,10 @@ const Cart = () => {
             <div className="text-right">
                 <b>Grand Total:</b> $ {total}
             </div>
-            <div className="text-right mt-6">
-                <button
-                    className=" bg-yellow-500 px-4 py-2 rounded-full leading-none"
-                    onClick={handleOrder}
-                >
-                    Order Now
-                </button>
-            </div>
+            {/* <div className="text-right mt-6">
+                
+            </div> */}
+            <Checkout cartItems={cartItems} setCartItems={setCartItems} />
         </div>
     ) : (
         <img className="mx-auto w-1/2 mt-12" src={emptyCart} alt="" />
