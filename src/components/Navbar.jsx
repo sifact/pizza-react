@@ -31,6 +31,9 @@ const Navbar = () => {
                         <Link to="/products">Products</Link>
                     </li>
                     <li>
+                        <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
                         <Link to="/cart">
                             <div style={cartStyle}>
                                 <span className="text-white">

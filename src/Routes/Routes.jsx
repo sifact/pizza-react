@@ -1,7 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
+
 import Main from "../Layouts/Main";
 import About from "../pages/About";
 import Cart from "../pages/Cart";
+import Dashboard from "../pages/Dashboard/Dashboard";
+import Orders from "../pages/Dashboard/Orders/Orders";
+import AllProducts from "../pages/Dashboard/Products/AllProducts";
+import Users from "../pages/Dashboard/Users/Users";
 import Home from "../pages/Home";
 
 import Products from "../pages/Products";
@@ -35,6 +40,22 @@ const router = createBrowserRouter([
                     fetch(
                         `https://pizza-react-server.vercel.app/productDetails/${params.id}`
                     ),
+            },
+            {
+                path: "/dashboard",
+                element: <Dashboard />,
+            },
+            {
+                path: "/allProducts",
+                element: <Dashboard />,
+            },
+            {
+                path: "/orders",
+                element: <Orders />,
+            },
+            {
+                path: "/users",
+                element: <Users />,
             },
         ],
     },
