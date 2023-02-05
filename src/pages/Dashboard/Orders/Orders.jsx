@@ -6,7 +6,7 @@ const Orders = () => {
     const [ordersData, setOrdersData] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:5000/orders";
+        const url = "https://pizza-react-server.vercel.app/orders";
 
         fetch(url)
             .then((res) => res.json())

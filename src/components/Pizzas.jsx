@@ -25,7 +25,7 @@ const Pizzas = () => {
                         <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-yellow-300"></div>
                     </div>
                 ) : (
-                    <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 my-8 gap-24">
+                    <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 my-8 gap-12">
                         {data.map((pizza) => (
                             <Pizza key={pizza._id} pizza={pizza} />
                         ))}

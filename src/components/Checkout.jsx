@@ -22,7 +22,7 @@ const Checkout = ({ cartItems, setCartItems }) => {
             cartItems,
         };
         console.log(ordersObj);
-        fetch("http://localhost:5000/orders", {
+        fetch("https://pizza-react-server.vercel.app/orders", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -50,8 +50,10 @@ const Checkout = ({ cartItems, setCartItems }) => {
                     placeholder="Full Name"
                     name="name"
                     className="block w-full border border-gray-300 rounded-sm p-4 my-4 outline-yellow-500"
+                    required
                 />
                 <input
+                    required
                     type="email"
                     name="email"
                     placeholder="Email"

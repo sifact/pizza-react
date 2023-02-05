@@ -16,7 +16,7 @@ const Order = ({ order }) => {
     };
     return (
         <>
-            <div className="grid shadow-md rounded-md bg-gray-50 border-l-4 p-8 m-8 w-full">
+            <div className="grid shadow-md rounded-md bg-gray-50 border-l-4 border-yellow-500 p-8 m-8 w-full">
                 <div className="flex justify-between ">
                     <p className="text-xl font-bold">Name: {name}</p>
                     <p className="text-lg font-bold">Email: {email}</p>

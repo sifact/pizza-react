@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import peperoni from "../assets/img/piz1.jpg";
+import peperoni from "../assets/img/pizza.png";
 import { cartContext } from "../Contexts/CartProvider";
 
 const Pizza = ({ pizza }) => {
@@ -33,9 +33,10 @@ const Pizza = ({ pizza }) => {
         }, 1000);
     };
     return (
-        <div>
+        <div className="shadow-md bg-gray-100 h-auto p-8 rounded-md">
             <Link to={`/productDetails/${_id}`}>
                 <img src={peperoni} alt="pizza" />
+
                 <div className="text-center">
                     <h2 className="text-lg font-bold py-2 ">{name}</h2>
                     <span className="bg-gray-200 rounded-full text-sm px-4">
