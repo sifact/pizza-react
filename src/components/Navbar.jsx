@@ -15,25 +15,25 @@ const Navbar = () => {
     };
     return (
         <>
-            <nav className="container mx-auto flex items-center justify-between my-4">
+            <nav className="container mx-auto flex flex-col md:flex-row items-center justify-between my-4">
                 <Link to="/">
                     <img style={{ height: 45 }} src={logo} alt="logo" />
                 </Link>
 
-                <ul className="flex items-center gap-4">
-                    <li>
+                <ul className="flex items-center gap-4 md:flex md:flex-row md:justify-end md:items-center">
+                    <li className="md:ml-4">
                         <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    <li className="md:ml-4 hidden sm:block">
                         <Link to="/about">About</Link>
                     </li>
-                    <li>
+                    <li className="md:ml-4">
                         <Link to="/products">Products</Link>
                     </li>
-                    <li>
+                    <li className="md:ml-4">
                         <Link to="/dashboard">Dashboard</Link>
                     </li>
-                    <li>
+                    <li className="md:ml-4">
                         <Link to="/cart">
                             <div style={cartStyle}>
                                 <span className="text-white">

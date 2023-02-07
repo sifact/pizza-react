@@ -5,9 +5,10 @@ import { cartContext } from "../Contexts/CartProvider";
 
 const Pizza = ({ pizza }) => {
     const [isAdding, setIsAdding] = useState(false);
-    const { _id, name, size, price } = pizza;
+    const { img, _id, name, size, price } = pizza;
     const { cart, setCart } = useContext(cartContext);
 
+    console.log(img);
     const addToCart = (e, product) => {
         // local variable
         let _cart = { ...cart };
@@ -35,7 +36,7 @@ const Pizza = ({ pizza }) => {
     return (
         <div className="shadow-md bg-gray-100 h-auto p-8 rounded-md">
             <Link to={`/productDetails/${_id}`}>
-                <img src={peperoni} alt="pizza" />
+                <img src={img ? img : peperoni} alt="pizza" />
 
                 <div className="text-center">
                     <h2 className="text-lg font-bold py-2 ">{name}</h2>

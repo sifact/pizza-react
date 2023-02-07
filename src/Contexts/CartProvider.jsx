@@ -5,6 +5,7 @@ export const cartContext = createContext();
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState({});
+    const [isOpenModal, setIsOpenModal] = useState(false);
 
     useEffect(() => {
         const cartJson = localStorage.getItem("cart");
@@ -16,7 +17,22 @@ const CartProvider = ({ children }) => {
         localStorage.setItem("cart", JSON.stringify(cart));
     }, [cart]);
 
-    const cartInfo = { cart, setCart };
+    const openModal = () => {
+        setIsOpenModal(true);
+    };
+
+    const closeModal = () => {
+        setIsOpenModal(false);
+    };
+
+    const cartInfo = {
+        cart,
+        setCart,
+        closeModal,
+        openModal,
+        isOpenModal,
+        setIsOpenModal,
+    };
 
     return (
         <cartContext.Provider value={cartInfo}>{children}</cartContext.Provider>
