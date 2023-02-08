@@ -16,19 +16,19 @@ const Order = ({ order }) => {
     };
     return (
         <>
-            <div className="grid shadow-md rounded-md bg-gray-50 border-l-4 border-yellow-500 p-8 m-8 w-full">
-                <div className="flex justify-between ">
+            <div className="container mx-auto mb-8 grid shadow-md rounded-md bg-gray-50 border-l-4 border-yellow-500 p-4 sm:p-8 w-full">
+                <div className="md:flex grid justify-between ">
                     <p className="text-xl font-bold">Name: {name}</p>
                     <p className="text-lg font-bold">Email: {email}</p>
-                    <p className="text-lg font-bold">Time: {time}</p>
+                    <p className="sm:text-lg sm:font-bold">Time: {time}</p>
                 </div>
-                <div className="container mx-auto  w-full ">
+                <div className=" w-full ">
                     <h1 className="my-12 font-bold">Cart Items</h1>
                     <ul>
                         {cartItems?.map((item) => {
                             return (
                                 <li className="mb-4" key={item.id}>
-                                    <div className="flex items-center xxsm:flex-col sm:flex-row">
+                                    <div className="sm:flex grid items-center ">
                                         <div className="flex items-center mr-12">
                                             <img
                                                 src={img}
@@ -39,7 +39,7 @@ const Order = ({ order }) => {
                                                 {item.name}
                                             </span>
                                         </div>
-                                        <div className="flex justify-between xxsm:mt-8 xxsm:mb-12 sm:my-0 w-full">
+                                        <div className="flex sm:justify-between justify-around xxsm:mt-8 xxsm:mb-12 sm:my-0 w-full">
                                             <div>
                                                 <b className="mx-4">
                                                     {getQuantity(item._id)}
@@ -55,8 +55,8 @@ const Order = ({ order }) => {
                             );
                         })}
                     </ul>
-                    <hr className="my-6" />
-                    <div className="text-right">
+                    <hr className="my-6 xxsm:w-4/5" />
+                    <div className="text-center sm:text-right w-full">
                         <b>Grand Total:</b> $ {total}
                     </div>
                 </div>

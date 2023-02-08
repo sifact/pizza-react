@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../Layouts/DashboardLayout";
 
 import Main from "../Layouts/Main";
 import About from "../pages/About";
@@ -42,24 +43,50 @@ const router = createBrowserRouter([
                         `https://pizza-react-server.vercel.app/productDetails/${params.id}`
                     ),
             },
+            // {
+            //     path: "/dashboard",
+            //     element: <Dashboard />,
+            // },
+            // {
+            //     path: "/allProducts",
+            //     element: <Dashboard />,
+            // },
+            // {
+            //     path: "/addProducts",
+            //     element: <AddProducts />,
+            // },
+            // {
+            //     path: "/orders",
+            //     element: <Orders />,
+            // },
+            // {
+            //     path: "/users",
+            //     element: <Users />,
+            // },
+        ],
+    },
+    {
+        path: "/dashboard",
+        element: <DashboardLayout />,
+        children: [
             {
                 path: "/dashboard",
                 element: <Dashboard />,
             },
             {
-                path: "/allProducts",
-                element: <Dashboard />,
+                path: "/dashboard/allProducts",
+                element: <AllProducts />,
             },
             {
-                path: "/addProducts",
+                path: "/dashboard/addProducts",
                 element: <AddProducts />,
             },
             {
-                path: "/orders",
+                path: "/dashboard/orders",
                 element: <Orders />,
             },
             {
-                path: "/users",
+                path: "/dashboard/users",
                 element: <Users />,
             },
         ],

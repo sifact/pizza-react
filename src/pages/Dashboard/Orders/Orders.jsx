@@ -14,8 +14,8 @@ const Orders = () => {
     }, []);
 
     return (
-        <div className="flex">
-            <Sidebar />
+        <div className="flex w-full items-center justify-center">
+            {/* <Sidebar /> */}
             <div>
                 {ordersData.map((order) => (
                     <Order key={order._id} order={order} />

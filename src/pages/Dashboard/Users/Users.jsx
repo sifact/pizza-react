@@ -4,11 +4,9 @@ import Sidebar from "../../../components/Sidebar";
 
 const Users = () => {
     return (
-        <div className="flex">
-            <Sidebar />
-            <h1>Users</h1>
-            {/* <Modal /> */}
-        </div>
+        <h1 className="w-full text-4xl font-bold text-yellow-500 text-center">
+            Coming Soon...
+        </h1>
     );
 };
 

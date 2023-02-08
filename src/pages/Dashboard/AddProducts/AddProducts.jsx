@@ -51,14 +51,13 @@ const AddProducts = () => {
     };
 
     return (
-        <div className="flex gap-20 mb-6">
-            <Sidebar />
+        <div className="flex gap-20 mb-6 w-full">
             <div className="flex flex-col w-full items-center">
                 <h2 className="text-xl font-semibold my-4 text-center">
                     Add a product
                 </h2>
                 <form
-                    className="bg-white p-6 rounded-lg shadow-md w-3/5 h-auto"
+                    className="bg-white p-6 rounded-lg shadow-md w-full md:w-3/5 h-auto"
                     onSubmit={handleSubmit}
                 >
                     <div className="mb-4">

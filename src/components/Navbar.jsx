@@ -20,7 +20,7 @@ const Navbar = () => {
                     <img style={{ height: 45 }} src={logo} alt="logo" />
                 </Link>
 
-                <ul className="flex items-center gap-4 md:flex md:flex-row md:justify-end md:items-center">
+                <ul className="flex items-center text-sm sm:text-lg gap-2 sm:gap-4 md:flex md:flex-row md:justify-end md:items-center">
                     <li className="md:ml-4">
                         <Link to="/">Home</Link>
                     </li>

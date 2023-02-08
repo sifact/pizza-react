@@ -50,9 +50,9 @@ const AllProducts = () => {
         setUpdateProduct(product);
     };
     return (
-        <div className={`flex flex-col w-full`}>
+        <div className={`grid w-full justify-center`}>
             <h1 className="text-center text-2xl font-bold">Products</h1>
-            <div className="p-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+            <div className="p-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {products.map((product) => (
                     <SingleProduct
                         key={product._id}

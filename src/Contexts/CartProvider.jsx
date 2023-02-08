@@ -6,6 +6,7 @@ export const cartContext = createContext();
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState({});
     const [isOpenModal, setIsOpenModal] = useState(false);
+    const [isOpenSidebar, setIsOpenSidebar] = useState(false);
 
     useEffect(() => {
         const cartJson = localStorage.getItem("cart");
@@ -24,6 +25,13 @@ const CartProvider = ({ children }) => {
     const closeModal = () => {
         setIsOpenModal(false);
     };
+    const openSidebar = () => {
+        setIsOpenSidebar(true);
+    };
+
+    const closeSidebar = () => {
+        setIsOpenSidebar(false);
+    };
 
     const cartInfo = {
         cart,
@@ -32,6 +40,9 @@ const CartProvider = ({ children }) => {
         openModal,
         isOpenModal,
         setIsOpenModal,
+        openSidebar,
+        closeSidebar,
+        isOpenSidebar,
     };
 
     return (
