@@ -23,7 +23,7 @@ const AllProducts = () => {
         );
 
         if (agree) {
-            const url = `http://localhost:5000/delete/${id}`;
+            const url = `https://pizza-react-server.vercel.app/delete/${id}`;
             fetch(url, {
                 method: "DELETE",
                 headers: {

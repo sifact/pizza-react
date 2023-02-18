@@ -31,7 +31,7 @@ const AddProducts = () => {
                     quantity,
                     desc,
                 };
-                fetch(`http://localhost:5000/products`, {
+                fetch(`https://pizza-react-server.vercel.app/products`, {
                     method: "POST",
                     headers: {
                         "content-type": "application/json",

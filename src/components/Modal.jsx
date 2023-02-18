@@ -20,7 +20,7 @@ export const Modal = ({ updateProduct }) => {
             quantity,
             desc,
         };
-        const url = `http://localhost:5000/update/${updateProduct?._id}`;
+        const url = `https://pizza-react-server.vercel.app/update/${updateProduct?._id}`;
         fetch(url, {
             method: "PUT",
             headers: {
