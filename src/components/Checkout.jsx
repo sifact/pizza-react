@@ -12,11 +12,24 @@ const Checkout = ({ cartItems, setCartItems }) => {
 
         const name = form.name.value;
         const email = form.email.value;
+        const district = form.district.value;
+        const ps = form.ps.value;
+        const po = form.po.value;
+        const village = form.village.value;
+        const house = form.house.value;
+        const mobile = form.mobile.value;
+
         const time = new Date().toLocaleString();
 
         const ordersObj = {
             name,
             email,
+            district,
+            ps,
+            po,
+            village,
+            house,
+            mobile,
             time,
             cart,
             cartItems,
@@ -45,22 +58,73 @@ const Checkout = ({ cartItems, setCartItems }) => {
     return (
         <div className="container mx-auto my-4">
             <form onSubmit={handleOrder} className="bg-white rounded-lg  p-6">
-                <input
-                    type="text"
-                    placeholder="Full Name"
-                    name="name"
-                    className="block w-full border border-gray-300 rounded-sm p-4 my-4 outline-yellow-500"
-                    required
-                />
-                <input
-                    required
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="block w-full border border-gray-300 rounded-sm outline-yellow-500 p-4 my-4"
-                />
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <input
+                        type="text"
+                        placeholder="Full Name"
+                        name="name"
+                        className="block w-full border border-gray-300 rounded-sm p-4  my-4 outline-primary"
+                        required
+                    />
+                    <input
+                        required
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        className="block w-full border border-gray-300 rounded-sm outline-primary p-4 my-4"
+                    />
+                </div>
 
-                <button className=" bg-yellow-500 px-6 py-4 rounded-full leading-none mt-6">
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <input
+                        className="block w-full border border-gray-300 rounded-sm outline-primary p-4 my-4"
+                        type="text"
+                        placeholder="District"
+                        required
+                        name="district"
+                    />
+                    <input
+                        className="block w-full border border-gray-300 rounded-sm outline-primary p-4 my-4"
+                        type="text"
+                        name="ps"
+                        placeholder="Upazila/Police Station"
+                        required
+                    />
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <input
+                        className="block w-full border border-gray-300 rounded-sm outline-primary p-4 my-4"
+                        type="text"
+                        placeholder="Post Office/area"
+                        name="po"
+                        required
+                    />
+                    <input
+                        className="block w-full border border-gray-300 rounded-sm outline-primary p-4 my-4"
+                        type="text"
+                        placeholder="Village/sector"
+                        required
+                        name="village"
+                    />
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4">
+                    <input
+                        className="block w-full border border-gray-300 rounded-sm outline-primary p-4 my-4"
+                        type="text"
+                        placeholder="House Number"
+                        name="house"
+                    />
+                    <input
+                        className="block w-full border border-gray-300 rounded-sm outline-primary p-4 my-4"
+                        type="text"
+                        placeholder="Mobile Number"
+                        required
+                        name="mobile"
+                    />
+                </div>
+
+                <button className=" bg-primary hover:bg-yellow-500 px-6 py-4 rounded-full leading-none mt-6">
                     Order Now
                 </button>
             </form>

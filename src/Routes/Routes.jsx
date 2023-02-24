@@ -10,9 +10,11 @@ import Orders from "../pages/Dashboard/Orders/Orders";
 import AllProducts from "../pages/Dashboard/Products/AllProducts";
 import Users from "../pages/Dashboard/Users/Users";
 import Home from "../pages/Home";
+import Login from "../pages/Login";
 
 import Products from "../pages/Products";
 import ProductsDetails from "../pages/ProductsDetails";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
     {
@@ -43,50 +45,38 @@ const router = createBrowserRouter([
                         `https://pizza-react-server.vercel.app/productDetails/${params.id}`
                     ),
             },
-            // {
-            //     path: "/dashboard",
-            //     element: <Dashboard />,
-            // },
-            // {
-            //     path: "/allProducts",
-            //     element: <Dashboard />,
-            // },
-            // {
-            //     path: "/addProducts",
-            //     element: <AddProducts />,
-            // },
-            // {
-            //     path: "/orders",
-            //     element: <Orders />,
-            // },
-            // {
-            //     path: "/users",
-            //     element: <Users />,
-            // },
+            {
+                path: "/login",
+                element: <Login />,
+            },
+            {
+                path: "/register",
+                element: <Register />,
+            },
         ],
     },
     {
-        path: "/dashboard",
+        path: "/dashboard84d23ece2b8a4a60eb50955b",
         element: <DashboardLayout />,
         children: [
             {
-                path: "/dashboard",
+                path: "/dashboard84d23ece2b8a4a60eb50955b",
                 element: <Dashboard />,
             },
             {
-                path: "/dashboard/allProducts",
+                path: "/dashboard84d23ece2b8a4a60eb50955b/allProducts",
                 element: <AllProducts />,
             },
             {
-                path: "/dashboard/addProducts",
+                path: "/dashboard84d23ece2b8a4a60eb50955b/addProducts",
                 element: <AddProducts />,
             },
             {
-                path: "/dashboard/orders",
+                path: "/dashboard84d23ece2b8a4a60eb50955b/orders",
                 element: <Orders />,
             },
             {
-                path: "/dashboard/users",
+                path: "/dashboard84d23ece2b8a4a60eb50955b/users",
                 element: <Users />,
             },
         ],

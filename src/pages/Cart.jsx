@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import img from "../assets/img/pizza.png";
+import pizza from "../assets/img/pizza.png";
 import { cartContext } from "../Contexts/CartProvider";
 import emptyCart from "../assets/img/empty-cart.png";
 import Checkout from "../components/Checkout";
@@ -87,7 +87,11 @@ const Cart = () => {
                         <li className="mb-4" key={item.id}>
                             <div className="flex items-center xxsm:flex-col sm:flex-row">
                                 <div className="flex items-center mr-12">
-                                    <img src={img} alt="" className="h-16" />
+                                    <img
+                                        src={item.img ? item.img : pizza}
+                                        alt=""
+                                        className="h-16 rounded-lg"
+                                    />
                                     <span className="font-bold ml-4 w-48">
                                         {item.name}
                                     </span>
@@ -95,7 +99,7 @@ const Cart = () => {
                                 <div className="flex justify-between xxsm:mt-8 xxsm:mb-12 sm:my-0 w-full">
                                     <div>
                                         <button
-                                            className="bg-yellow-500 px-4 py-2 rounded-full leading-none"
+                                            className="bg-primary text-white px-4 py-2 rounded-full leading-none"
                                             onClick={() => decrement(item._id)}
                                         >
                                             -
@@ -104,7 +108,7 @@ const Cart = () => {
                                             {getQuantity(item._id)}
                                         </b>
                                         <button
-                                            className="bg-yellow-500 px-4 py-2 rounded-full leading-none"
+                                            className="bg-primary text-white px-4 py-2 rounded-full leading-none"
                                             onClick={() => increment(item._id)}
                                         >
                                             +
@@ -112,7 +116,7 @@ const Cart = () => {
                                     </div>
 
                                     <span>
-                                        $ {getSum(item._id, item.price)}
+                                        Tk {getSum(item._id, item.price)}
                                     </span>
                                     <button
                                         className=" bg-red-500 px-4 py-2 rounded-full leading-none text-white"
@@ -128,7 +132,7 @@ const Cart = () => {
             </ul>
             <hr className="my-6" />
             <div className="text-right">
-                <b>Grand Total:</b> $ {total}
+                <b>Grand Total:</b> Tk {total}
             </div>
             {/* <div className="text-right mt-6">
                 

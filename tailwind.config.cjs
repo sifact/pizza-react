@@ -13,7 +13,12 @@ module.exports = {
         // colors: {
         //     primary: "green",
         // },
-        extend: {},
+        extend: {
+            colors: {
+                primary: "#65a30d",
+                secondary: "#111827",
+            },
+        },
     },
     plugins: [],
 };

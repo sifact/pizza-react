@@ -12,6 +12,7 @@ const AddProducts = () => {
         const price = form.price.value;
         const quantity = form.quantity.value;
         const desc = form.description.value;
+        const quality = form.quality.value;
 
         const formData = new FormData();
         const url = `https://api.imgbb.com/1/upload?&key=38928ea861ba232ef8e6dd1f13258882`;
@@ -30,6 +31,7 @@ const AddProducts = () => {
                     price,
                     quantity,
                     desc,
+                    quality,
                 };
                 fetch(`https://pizza-react-server.vercel.app/products`, {
                     method: "POST",
@@ -116,6 +118,19 @@ const AddProducts = () => {
                             className="border border-gray-400 p-2 w-full outline-yellow-300 rounded-sm"
                             type="number"
                             name="quantity"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label
+                            className="block font-medium mb-2"
+                            htmlFor="Quality"
+                        >
+                            Quality
+                        </label>
+                        <input
+                            className="border border-gray-400 p-2 w-full outline-yellow-300 rounded-sm"
+                            type="text"
+                            name="quality"
                         />
                     </div>
                     <div className="mb-4">

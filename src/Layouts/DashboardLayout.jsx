@@ -16,12 +16,14 @@ const DashboardLayout = () => {
                     <FaBars className="cursor-pointer" onClick={openSidebar} />
                 </div>
 
-                <div
-                    className={`absolute  top-0 left-0 ${
-                        !isOpenSidebar && `hidden`
-                    }`}
-                >
-                    <Sidebar />
+                <div className="sticky top-0">
+                    <div
+                        className={`absolute  top-0 left-0 ${
+                            !isOpenSidebar && `hidden`
+                        }`}
+                    >
+                        <Sidebar />
+                    </div>
                 </div>
 
                 <Outlet />
